@@ -1,0 +1,29 @@
+[
+  {
+    "namespace": "manifest",
+    "types": [
+      {
+        "$extend": "Permission",
+        "choices": [{
+          "type": "string",
+          "enum": [ "experiments.protocol" ]
+        }]
+      }
+    ]
+  },
+  {
+    "namespace": "protocol",
+    "description": "protocol handler registration",
+    "permissions": ["experiments.protocol"],
+    "functions": [{
+      "name": "registerHandler",
+      "type": "function",
+      "description": "Registers a protocol handler",
+      "parameters": [
+        {"type": "string", "name": "protocol"},
+        {"type": "string", "name": "uri"},
+        {"type": "string", "name": "name"}
+      ]
+    }]
+  }
+]
